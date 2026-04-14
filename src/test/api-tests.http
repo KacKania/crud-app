@@ -1,0 +1,51 @@
+
+GET http://localhost:8081/api/items
+Accept: application/json
+
+###
+
+
+POST http://localhost:8081/api/items
+Content-Type: application/json
+
+{
+  "name": "Pierwszy przedmiot"
+}
+
+###
+
+
+POST http://localhost:8081/api/items
+Content-Type: application/json
+
+{
+  "name": "Drugi przedmiot"
+}
+
+###
+
+
+GET http://localhost:8081/api/items
+Accept: application/json
+
+###
+
+
+GET http://localhost:8081/api/items/1
+Accept: application/json
+
+###
+
+
+PUT http://localhost:8081/api/items/1
+Content-Type: application/json
+
+{
+  "name": "Zaktualizowany pierwszy przedmiot"
+}
+
+###
+
+
+DELETE http://localhost:8081/api/items/2
+
