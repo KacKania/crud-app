@@ -1,0 +1,14 @@
+services:
+  mysql-book:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=book
+      - MYSQL_ROOT_PASSWORD=mysql
+    ports:
+      - '3307:3306'
+    volumes:
+      - ./mysql-book/data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d

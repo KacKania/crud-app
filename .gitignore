@@ -28,6 +28,17 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+# Ignoruj dane bazy danych z Dockera
+mysql-book/data/
 
+# Ignoruj pliki IntelliJ
+.idea/
+*.iml
+
+# Ignoruj skompilowane pliki Javy
+target/
+
+# Ignoruj logi
+*.log
 ### VS Code ###
 .vscode/
