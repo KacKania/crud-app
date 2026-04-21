@@ -37,7 +37,7 @@ Accept: application/json
 ###
 
 
-PUT http://localhost:8081/api/items/1
+PUT http://localhost:8081/api/items/4
 Content-Type: application/json
 
 {
@@ -47,5 +47,5 @@ Content-Type: application/json
 ###
 
 
-DELETE http://localhost:8081/api/items/1
+DELETE http://localhost:8081/api/items/4
 
