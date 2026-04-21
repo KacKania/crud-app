@@ -1,8 +1,8 @@
 services:
+
   mysql-book:
     image: mysql:8.0
-    cap_add:
-      - SYS_NICE
+    container_name: mysql-book
     restart: always
     environment:
       - MYSQL_DATABASE=book
@@ -12,3 +12,25 @@ services:
     volumes:
       - ./mysql-book/data:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
+
+
+  app-service-1:
+    build: .
+    container_name: spring-app-1
+    ports:
+      - '8081:8080' # Na komputerze 8081 -> w kontenerze 8080
+    depends_on:
+      - mysql-book
+    environment:
+      - SPRING_PROFILES_ACTIVE=obraz
+
+
+  app-service-2:
+    build: .
+    container_name: spring-app-2
+    ports:
+      - '8082:8080' # Na komputerze 8082 -> w kontenerze 8080
+    depends_on:
+      - mysql-book
+    environment:
+      - SPRING_PROFILES_ACTIVE=obraz
