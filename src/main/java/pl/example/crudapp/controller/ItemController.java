@@ -57,4 +57,9 @@ public class ItemController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/instance")
+    public String getInstance() {
+        return "Obsłużył mnie kontener: " + System.getenv("HOSTNAME");
+    }
 }
